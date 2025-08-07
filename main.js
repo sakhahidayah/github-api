@@ -29,7 +29,7 @@ function getUsername() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        if (data) {
+        if (data.status !== "404") {
           console.log(data);
           document.getElementById("list").innerHTML = `
            <div class="flex items-center gap-4">
@@ -41,7 +41,7 @@ function getUsername() {
          </div>
             `;
         } else {
-          console.log("Username Not Found");
+          document.getElementById("list").innerHTML = `<h1 class="text-gray-700 font-bold">Cannot find Username ( <span class="text-gray-500">${value}</span> )</h1>`;
         }
       })
       .catch((error) => {
