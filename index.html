@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="h-screen w-screen flex justify-center items-center">
+      <div class="flex flex-col border border-sky-300 bg-white shadow-lg items-center justify-center gap-5 w-96 p-6 rounded-xl">
+        <h1 class="text-2xl font-bold text-sky-700">GitHub Profile Search</h1>
+        <form id="formUsername" class="flex flex-col gap-3 w-full">
+          <input type="text" name="username" id="usernameGithub" placeholder="Enter your GitHub username..." class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+          <button id="btn" type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 rounded transition duration-200">Submit</button>
+        </form>
+        <div id="list" class="text-center mt-4 w-full p-3 bg-gray-50 border rounded shadow-inner"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
