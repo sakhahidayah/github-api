@@ -1,7 +1,6 @@
 const formUsername = document.getElementById("formUsername");
 const usernameGithub = document.getElementById("usernameGithub");
 const btn = document.getElementById("btn");
-
 formUsername.addEventListener("submit", (e) => {
   e.preventDefault();
   getUsername();
@@ -30,13 +29,13 @@ function getUsername() {
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== "404") {
-          console.log(data);
           document.getElementById("list").innerHTML = `
            <div class="flex items-center gap-4">
             <img src="${data.avatar_url}" alt="avatar" class="w-16 h-16 rounded-full border" />
             <div class=" flex flex-col ">
-            <h3 class="text-lg font-semibold text-gray-700">${data.login}</h3>
-            <h3 class="text-[10px] font-normal text-gray-400">${data.bio}</h3>
+            <h3 class="text-lg font-semibold text-start  text-gray-700">${data.login}</h3>
+            <h3 class="text-[10px] font-medium mb-1 text-start  text-gray-400">${data.bio}</h3>
+            <a target="_blank" class="text-[8px] px-2 py-1 rounded bg-sky-500 hover:bg-sky-700  text-white font-bold transition-all duration-200 text-start" href=${data.html_url}>See more..</a>
             </div>
          </div>
             `;
@@ -45,7 +44,7 @@ function getUsername() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        document.getElementById("list").innerHTML = `<h1 class="text-gray-700 font-bold">Error:  ( <span class="text-gray-500">${error}</span> )</h1>`;
       });
   }
 }
